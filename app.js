@@ -5,7 +5,7 @@ let computerWins = 0;
 let winner;
 
 const container = document.querySelector("#container");
-container.textContent = "Welcome! First to 5 wins!";
+container.textContent = "Welcome to Doodle RPS! \nFirst to 5 wins!";
 const currentScore = document.createElement("currentScore");
 const playAgain = document.querySelector("#playAgainBtn");
 const buttons = document.querySelectorAll(".RPS");
@@ -50,14 +50,14 @@ function playRound (playerSelection, computerSelection){
 function showResult(winner){
     if (winner == "Player"){
         playerWins += 1;
-        container.textContent = `You win! ${playerSelection} beats ${computerSelection} `;
+        container.textContent = `You win! ${playerSelection} beats ${computerSelection}\n `;
     } else if (winner == "Computer"){
         computerWins += 1;
-        container.textContent = `You lose! ${computerSelection} beats ${playerSelection} `;
+        container.textContent = `You lose! ${computerSelection} beats ${playerSelection}\n `;
     } else if (winner == "Tie"){
-        container.textContent = "It's a tie!";
+        container.textContent = " It's a tie!" ;
     } 
-    currentScore.textContent = `| \nPlayer score: ${playerWins} Computer score: ${computerWins}`;
+    currentScore.textContent = `\nPlayer score: ${playerWins} Computer score: ${computerWins} `;
     container.appendChild(currentScore);
 }
 
@@ -71,7 +71,13 @@ function playGame(){
     buttons.forEach((button) => {
         button.addEventListener ('click', () => {
             computerSelection = getComputerChoice();
-            playerSelection = button.textContent;
+            if(button.classList.contains("rockBtn")){
+                playerSelection = "Rock"
+            } else if(button.classList.contains("paperBtn")){
+                playerSelection = "Paper"
+            } else if(button.classList.contains("scissorsBtn")){
+                playerSelection = "Scissors"
+            }
             playRound(playerSelection, computerSelection);
             if (playerWins == 5 || computerWins == 5){
                 buttons.forEach((button) => {
@@ -80,12 +86,12 @@ function playGame(){
                 });
                 playAgain.style.visibility = 'visible';
                 restartGame();
-                if (playerWins < computerWins){
-                    container.textContent = "You win the match!";
+                if (playerWins > computerWins){
+                    container.textContent = " You win the match! ";
                     currentScore.textContent;
                     container.appendChild(currentScore);
-                } else if (computerWins < playerWins){
-                    container.textContent = "You lose the match!";
+                } else if (computerWins > playerWins){
+                    container.textContent = " You lose the match! ";
                     currentScore.textContent;
                     container.appendChild(currentScore);
                 }

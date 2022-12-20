@@ -1,0 +1,58 @@
+@font-face { font-family: Rubik; 
+    src: url('./RubikVinyl-Regular.ttf'); } 
+
+html {
+    font-size: 40px;
+    font-family: Rubik;
+    background: url('./images/blank_notebook.jpg');
+    background-size: cover;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: flex-end;
+}
+
+#container {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.choices {
+    padding-left: 20px;
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+img {
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#playAgainBtn{
+    font-size: 40px;
+    font-family: Rubik;
+    margin-top: 50px;
+    max-width: 200px;
+    align-self: center;
+}
+
+.footer {
+    font-family: sans-serif;
+    font-size: 20px;
+    display:flex;
+    background-color: #2a4d2a;
+    color: #F9FAF8;
+    justify-content: center;
+    padding: 40px;
+    margin: -15px;
+}
