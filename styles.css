@@ -60,7 +60,7 @@ img {
 }
 
 .footer {
-    font-family: sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     display:flex;
     justify-self: flex-end;
@@ -68,4 +68,5 @@ img {
     justify-content: center;
     padding: 40px;
     margin: -15px;
+    background-color: rgba(128, 128, 128, 0.507);
 }
