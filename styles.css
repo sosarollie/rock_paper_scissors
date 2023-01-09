@@ -1,32 +1,34 @@
-@font-face { font-family: Rubik; 
-    src: url('./RubikVinyl-Regular.ttf'); } 
+@font-face { font-family: AdamWarren; 
+    src: url('./adam-warren-pro.bold-italic.ttf'); } 
 
 html {
-    font-size: 40px;
-    font-family: Rubik;
+    font-size: 50px;
+    font-family: AdamWarren;
     background: url('./images/blank_notebook.jpg');
     background-size: cover;
+    background-position: 0% -5%;
 }
-
-
 
 body {
     display:flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 30px;
     justify-content: space-between;
     min-height: 100vh;
 }
 
 #container {
+    padding-top: 10px;
     display:flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    gap: 20px;
     align-items: center;
 }
 
 
 .choices {
+    padding-bottom: 60px;
     padding-left: 20px;
     gap: 50px;
     display: flex;
@@ -43,10 +45,18 @@ img {
 
 #playAgainBtn{
     font-size: 40px;
-    font-family: Rubik;
+    font-family: AdamWarren;
     margin-top: 50px;
     max-width: 200px;
     align-self: center;
+}
+
+.currentScore {
+    padding-left: 50px;
+    display: flex;
+    justify-content: space-around;
+    min-width: 1000px;
+    font-size: 35px;
 }
 
 .footer {
@@ -54,8 +64,7 @@ img {
     font-size: 20px;
     display:flex;
     justify-self: flex-end;
-    background-color: #2a4d2a;
-    color: #F9FAF8;
+    color: black;
     justify-content: center;
     padding: 40px;
     margin: -15px;

@@ -5,10 +5,13 @@ let computerWins = 0;
 let winner;
 
 const container = document.querySelector("#container");
-container.textContent = "Welcome to Doodle RPS! \nFirst to 5 wins!";
+container.textContent = "Welcome to Doodle RPS!  First to 5 wins!";
 const currentScore = document.createElement("currentScore");
+currentScore.className = "currentScore";
 const playAgain = document.querySelector("#playAgainBtn");
 const buttons = document.querySelectorAll(".RPS");
+const showPlayer = document.createElement("showPlayer");
+const showComputer = document.createElement("showComputer");
 playAgain.style.visibility = 'hidden';
 
 function getComputerChoice() {
@@ -56,8 +59,11 @@ function showResult(winner){
         container.textContent = `You lose! ${computerSelection} beats ${playerSelection}\n `;
     } else if (winner == "Tie"){
         container.textContent = " It's a tie!" ;
-    } 
-    currentScore.textContent = `\nPlayer score: ${playerWins} Computer score: ${computerWins} `;
+    }
+    showPlayer.textContent = `Player score: ${playerWins}`; 
+    showComputer.textContent = `Computer score: ${computerWins}`;
+    currentScore.appendChild(showPlayer);
+    currentScore.appendChild(showComputer);
     container.appendChild(currentScore);
 }
 
